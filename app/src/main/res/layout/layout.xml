@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvMortgage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Mortgage"
+        app:layout_constraintEnd_toEndOf="@+id/tvPaymentResult"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDownPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Down Payment"
+        app:layout_constraintEnd_toEndOf="@+id/tvPaymentResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvMortgage" />
+
+    <TextView
+        android:id="@+id/tvInterestRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Interest Rate"
+        app:layout_constraintEnd_toEndOf="@+id/tvPaymentResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvDownPayment" />
+
+    <TextView
+        android:id="@+id/tvTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Term"
+        app:layout_constraintEnd_toEndOf="@+id/tvPaymentResult"
+        app:layout_constraintTop_toBottomOf="@+id/tvInterestRate"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <TextView
+        android:id="@+id/tvPaymentResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:text="Monthly Payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bCalculate" />
+
+    <EditText
+        android:id="@+id/etMortgageAmount"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_marginStart="32dp"
+        app:layout_constraintLeft_toRightOf="@+id/tvMortgage"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMortgage"
+        app:layout_constraintTop_toTopOf="@+id/tvMortgage"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <EditText
+        android:id="@+id/etDownPaymentAmount"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/etMortgageAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDownPayment"
+        app:layout_constraintTop_toTopOf="@+id/tvDownPayment"
+        tools:layout_editor_absoluteX="164dp" />
+
+    <SeekBar
+        android:id="@+id/sbInterestRate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:max="999"
+        android:progress="499"
+        app:layout_constraintBottom_toBottomOf="@+id/tvInterestRate"
+        app:layout_constraintStart_toStartOf="@+id/etMortgageAmount"
+        app:layout_constraintTop_toTopOf="@+id/tvInterestRate" />
+
+    <RadioGroup
+        android:id="@+id/rgTermSelection"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/etMortgageAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTerm"
+        app:layout_constraintTop_toTopOf="@+id/tvTerm"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="226dp">
+
+        <RadioButton
+            android:id="@+id/rbTwentyFive"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="25"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <RadioButton
+            android:id="@+id/rbThirty"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:text="30"
+            tools:layout_editor_absoluteX="281dp"
+            tools:layout_editor_absoluteY="208dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvMonthlyPayment"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="24324"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPaymentResult"
+        app:layout_constraintStart_toStartOf="@+id/etMortgageAmount"
+        app:layout_constraintTop_toTopOf="@+id/tvPaymentResult" />
+
+    <Button
+        android:id="@+id/bCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTerm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="233dp" />
+
+    <TextView
+        android:id="@+id/tvInterestRateLabel"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="5.00%"
+        app:layout_constraintBottom_toBottomOf="@+id/sbInterestRate"
+        app:layout_constraintLeft_toRightOf="@+id/sbInterestRate"
+        app:layout_constraintTop_toTopOf="@+id/sbInterestRate" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
