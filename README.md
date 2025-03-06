@@ -2,7 +2,7 @@
 
 Developed by Michelle Liu - `https://github.com/MLcraft`
 
-Written in Kotlin with Jetpack Compose
+Written in Kotlin with Jetpack Compose. There is also a functional XML Layout version included in `MainActivityOld.kt`, using ConstraintLayout
 
 ## Description
 
